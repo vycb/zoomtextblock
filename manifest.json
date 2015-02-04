@@ -1,0 +1,38 @@
+{
+  "name": "Zoom Text Block ",
+  "description": "Allows enlarge font size of text paragraphs or text blocks through context menu. It also able to enlarge images",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["content_script.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "48": "icon-64.png",
+    "128": "icon-128.png",
+    "256": "icon-256.png"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    // Required.
+    "page": "options.html",
+    // Recommended.
+    "chrome_style": true
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    //,"open_in_tab": true
+  },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*","contextMenus",
+    "storage"
+  ],
+  "manifest_version": 2
+}
